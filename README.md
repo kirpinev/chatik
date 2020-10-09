@@ -33,7 +33,7 @@ https://chatttik.herokuapp.com/
 Скопируйте проект на компьютер:
 
 ```
-git clone https://github.com/kirpinev/mf.messenger.praktikum.yandex.git
+git clone https://github.com/kirpinev/chatik.git
 ```
 
 Установите зависимости:
