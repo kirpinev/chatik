@@ -1,0 +1,4 @@
+{
+  "plugins": ["stylelint-plugin-stylus"],
+  "extends": ["stylelint-plugin-stylus/standard"]
+}

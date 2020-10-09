@@ -1,0 +1,16 @@
+export { ErrorsInterface } from './errors';
+export { Options } from './options';
+export { ApiInterface } from './api';
+export { PromiseInterface } from './promise';
+export { PathInterface } from './path';
+export { ErrorPageInterface } from './error-page';
+export { ChatsApiInterface } from './chats-api';
+export { UsersApiInterface } from './users-api';
+export { FormInterface } from './form';
+export { ChatInterface } from './chat';
+export { InterfaceWithSendFormEndTopInterface } from './dialog';
+export { MessageInterface } from './message';
+export { InterfaceWithAvatarAndMessages } from './side-avatar-messages';
+export { ValidationInterface } from './validation';
+export { BlockInterface } from './block';
+export { UserInfoInterface } from './user-info';

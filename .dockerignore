@@ -1,0 +1,8 @@
+node_modules
+.git
+.cache
+**/*.class
+*.md
+!README*.md
+README-secret.md
+.DS_Store

@@ -1,0 +1,13 @@
+/dist
+/static-files
+/netlify
+/node_modules
+
+*.config.js
+
+babelrc
+
+app.js
+
+.eslintrc.js
+*.js

@@ -1,0 +1,10 @@
+ui
+dist
+netlify
+heroku
+static-files
+*.json
+*.js
+*.ts
+src/images
+Dockerfile
