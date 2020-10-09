@@ -8,6 +8,8 @@
 - Stylus
 - TS
 - БЭМ
+- Docker
+- Mocha/Chai
 
 # Heroku
 
