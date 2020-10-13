@@ -13,7 +13,7 @@
 
 # Heroku
 
-https://chatttik.herokuapp.com/
+https://chattik.herokuapp.com/
 
 # Какие есть страницы
 
