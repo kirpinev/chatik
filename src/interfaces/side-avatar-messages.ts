@@ -1,4 +1,4 @@
-import { Avatar, Favorites, Search } from '../modules/views';
+import { Avatar, Search } from '../modules/views';
 import { MessagesList } from '../modules/controllers';
 
 export interface InterfaceWithAvatarAndMessages {

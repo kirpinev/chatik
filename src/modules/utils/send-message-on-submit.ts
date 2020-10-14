@@ -6,7 +6,6 @@ export const sendMessageOnSubmit = (
   validation: Validation,
   elem: string,
   socket: WebSocket,
-  chatId: any,
 ) => {
   const form = document.querySelector(elem);
 

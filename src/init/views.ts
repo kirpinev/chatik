@@ -41,8 +41,6 @@ import { authApi, chatApi, userApi } from './api';
 
 import { router } from './init-router';
 
-import { chat } from './controllers';
-
 export const reg = new FormReg(regData, {
   validation: new Validation(errors, '#reg'),
   errors,

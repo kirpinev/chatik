@@ -40,12 +40,12 @@ export class ChatInfo extends Block {
       const target = event.target as HTMLElement;
 
       if (target.classList.contains('chat-user-badge__action')) {
-        const userInfo = {
-          users: [parseInt(target.parentElement.dataset.userId)],
-          chatId: parseInt(localStorage.chatId),
+        const userDataObject = {
+          users: [parseInt(target.parentElement.dataset.userId, 10)],
+          chatId: parseInt(localStorage.chatId, 10),
         };
 
-        const res = await this.props.chatApi.deleteUserFromChat(userInfo);
+        const res = await this.props.chatApi.deleteUserFromChat(userDataObject);
 
         if (res.status === 200) {
           target.parentElement.parentElement.remove();

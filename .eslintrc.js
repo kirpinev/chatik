@@ -17,6 +17,9 @@ module.exports = {
     'prefer-destructuring': 'off',
     'no-cond-assign': 'off',
     'no-return-assign': 'off',
-    '@typescript-eslint/dot-notation': 'off'
+    '@typescript-eslint/dot-notation': 'off',
+    'no-await-in-loop': 'off',
+    'no-restricted-syntax': 'off',
+    'import/no-cycle': 'off',
   },
 };

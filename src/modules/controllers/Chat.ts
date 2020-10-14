@@ -211,9 +211,9 @@ export class Chat implements ChatInterface {
     for (let i = 0; i < messagesList.length; i += 1) {
       const userId = messagesList[i].user_id || messagesList[i].userId;
 
-      const userInfo = await this.props.userApi.getUserById(userId);
+      const userDataInfo = await this.props.userApi.getUserById(userId);
 
-      const userAvatar = JSON.parse(userInfo.response).avatar;
+      const userAvatar = JSON.parse(userDataInfo.response).avatar;
 
       messagesList[i].avatar = this.setAvatar(userAvatar);
 
@@ -307,10 +307,10 @@ export class Chat implements ChatInterface {
           const message = chat1.avatar
             ? new Message(chat1)
             : new Message({
-                ...chat1,
-                avatar:
-                  'https://dmitrovipoteka.ru/wp-content/uploads/2016/09/default-user-img.jpg',
-              });
+              ...chat1,
+              avatar:
+                'https://dmitrovipoteka.ru/wp-content/uploads/2016/09/default-user-img.jpg',
+            });
 
           this.props.sideInterface.messagesList.wrapper.appendChild(
             message.getContent(),

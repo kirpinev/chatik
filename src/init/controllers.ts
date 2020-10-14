@@ -13,7 +13,7 @@ import {
   topInterface,
   userInfo,
   chatAvatarForm,
-  chatInfo
+  chatInfo,
 } from './views';
 
 import { authApi, chatApi, userApi } from './api';
@@ -24,7 +24,10 @@ import { Validation } from '../modules/models';
 
 import { errors, path } from '../modules/constants';
 
-import { checkInputsOnFocusAndBlur, sendMessageOnSubmit } from '../modules/utils';
+import {
+  checkInputsOnFocusAndBlur,
+  sendMessageOnSubmit,
+} from '../modules/utils';
 
 const messagesList = new MessagesList();
 const SideInterface = new SideInterfaceWithAvatarAndMessages(

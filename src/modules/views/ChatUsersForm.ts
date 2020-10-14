@@ -82,8 +82,8 @@ export class ChatUsersForm extends Form {
 
       if (target.classList.contains('chat-user-badge__action')) {
         const userInfo = {
-          users: [parseInt(target.parentElement.dataset.userId)],
-          chatId: parseInt(localStorage.chatId),
+          users: [parseInt(target.parentElement.dataset.userId, 10)],
+          chatId: parseInt(localStorage.chatId, 10),
         };
 
         try {
