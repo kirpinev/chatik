@@ -8,6 +8,9 @@ import {
   passForm,
   avaForm,
   chatForm,
+  chatAvatarForm,
+  chatUsersForm,
+  chatInfo,
 } from './views';
 
 import { chat } from './controllers';
@@ -21,6 +24,9 @@ router
   .use('/error', errorPage)
   .use('/pass', passForm)
   .use('/ava', avaForm)
-  .use('/new-chat', chatForm);
+  .use('/new-chat', chatForm)
+  .use('/chat-avatar', chatAvatarForm)
+  .use('/chat-users', chatUsersForm)
+  .use('/chat-info', chatInfo);
 
 export { router };

@@ -8,4 +8,7 @@ export interface PathInterface {
   pass: string;
   ava: string;
   newChat: string;
+  chatAvatar: string;
+  chatUsers: string;
+  chatInfo: string;
 }

@@ -34,7 +34,7 @@ export class Api implements ApiInterface {
       if (method === 'GET' || !body) {
         xhr.send();
       } else if (contentType === 'multipart/form-data') {
-        xhr.send(new FormData(body));
+        xhr.send(body);
       } else {
         xhr.send(JSON.stringify(body));
       }
@@ -69,11 +69,16 @@ export class Api implements ApiInterface {
     });
   }
 
-  delete(path: string, body: object): Promise<PromiseInterface> {
+  delete(
+    path: string,
+    body: object,
+    contentType: string,
+  ): Promise<PromiseInterface> {
     return this.request({
       path,
       body,
       method: regMethod.delete,
+      contentType,
     });
   }
 }

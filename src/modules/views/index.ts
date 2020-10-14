@@ -16,3 +16,7 @@ export { Page } from './Page';
 export { PasswordForm } from './PasswordForm';
 export { AvatarForm } from './AvatarForm';
 export { ChatForm } from './ChatForm';
+export { ChatAvatarForm } from './ChatAvatarForm';
+export { ChatUsersForm } from './ChatUsersForm';
+export { ChatUserBadge } from './ChatUserBadge';
+export { ChatInfo } from './ChatInfo';

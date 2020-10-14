@@ -4,6 +4,8 @@ import { Templator } from '../models';
 import { avaForm as avaTempl } from '../../templates/ava-form.jumbo';
 
 export class AvatarForm extends Form {
+  private avatarForm: HTMLFormElement;
+
   render(): string {
     return new Templator(avaTempl).compile(this.data);
   }
@@ -29,9 +31,11 @@ export class AvatarForm extends Form {
   }
 
   submit(): void {
-    const avatarForm = document.querySelector(this.props.form);
+    this.avatarForm = document.querySelector(
+      this.props.form,
+    ) as HTMLFormElement;
 
-    avatarForm.addEventListener('submit', event => {
+    this.avatarForm.addEventListener('submit', event => {
       event.preventDefault();
 
       const formData = this.props.getDataOnSubmit(
@@ -39,13 +43,15 @@ export class AvatarForm extends Form {
         this.props.form,
       );
 
+      const avatarData = new FormData(this.avatarForm);
+
       if (formData.status) {
-        this.updateAvatar(avatarForm);
+        this.updateAvatar(avatarData);
       }
     });
   }
 
-  async updateAvatar(form: Element) {
+  async updateAvatar(form: FormData) {
     try {
       const res = await this.props.userApi.updateAvatar(form);
 
@@ -56,7 +62,8 @@ export class AvatarForm extends Form {
 
         this.disableButton();
       } else {
-        form.querySelector(this.props.error).textContent = res.response;
+        this.avatarForm.querySelector(this.props.error).textContent =
+          res.response;
       }
     } catch (error) {
       console.log(error);

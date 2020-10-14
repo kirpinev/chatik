@@ -12,7 +12,6 @@ export class Page extends Block {
   }
 
   setListeners(): void {
-    // Методы show() и hide() отсюда убрал, они есть в Block.
     this.page = document.querySelector(this.props.page);
 
     if (!this.page) {

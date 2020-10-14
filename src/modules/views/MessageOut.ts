@@ -3,8 +3,8 @@ import { Block, Templator } from '../models';
 import { messageOutTemplate } from '../../templates/message-out.jumbo';
 
 export class MessageOut extends Block {
-  constructor() {
-    super('div');
+  constructor(data) {
+    super('div', data);
   }
 
   render(): string {

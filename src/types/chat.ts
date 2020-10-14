@@ -7,15 +7,22 @@ import { Router, Validation } from '../modules/models';
 
 import { ErrorsInterface, PathInterface } from '../interfaces';
 
-import { AuthApi, ChatsApi } from '../modules/api';
+import { AuthApi, ChatsApi, UsersApi } from '../modules/api';
 
-import { UserInfo } from '../modules/views';
+import { UserInfo, ChatAvatarForm, ChatInfo } from '../modules/views';
 
 export type ChatPropTypes = {
   sideInterface: SideInterfaceWithAvatarAndMessages;
   dialogInterface: DialogInterfaceWithSendFormEndTopInterface;
+  chatAvatarForm: ChatAvatarForm;
+  chatInfo: ChatInfo;
   checkInputsOnFocusAndBlur: (validation: Validation, form: string) => void;
-  checkOnSubmit: (validation: Validation, elem: string) => void;
+  sendMessageOnSubmit: (
+    validation: Validation,
+    elem: string,
+    socket: WebSocket,
+    chatId: any,
+  ) => void;
   validation: Validation;
   errors: ErrorsInterface;
   form: string;
@@ -24,4 +31,5 @@ export type ChatPropTypes = {
   authApi: AuthApi;
   chatApi: ChatsApi;
   userInfo: UserInfo;
+  userApi: UsersApi;
 };

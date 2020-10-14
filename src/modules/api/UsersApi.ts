@@ -13,11 +13,15 @@ export class UsersApi implements UsersApiInterface {
     return this.api.put('/user/password', body, null);
   }
 
-  updateAvatar(body: Element): Promise<PromiseInterface> {
+  updateAvatar(body: FormData): Promise<PromiseInterface> {
     return this.api.put('/user/profile/avatar', body, 'multipart/form-data');
   }
 
-  searchUser(body: null): Promise<PromiseInterface> {
+  searchUser(body: object): Promise<PromiseInterface> {
     return this.api.post('/user/search', body);
+  }
+
+  getUserById(userId: string): Promise<PromiseInterface> {
+    return this.api.get(`/user/${userId}`);
   }
 }

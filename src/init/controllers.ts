@@ -9,13 +9,14 @@ import {
 import {
   avatar,
   search,
-  favorites,
   bottomInterface,
   topInterface,
   userInfo,
+  chatAvatarForm,
+  chatInfo
 } from './views';
 
-import { authApi, chatApi } from './api';
+import { authApi, chatApi, userApi } from './api';
 
 import { router } from './init-router';
 
@@ -23,13 +24,12 @@ import { Validation } from '../modules/models';
 
 import { errors, path } from '../modules/constants';
 
-import { checkInputsOnFocusAndBlur, checkOnSubmit } from '../modules/utils';
+import { checkInputsOnFocusAndBlur, sendMessageOnSubmit } from '../modules/utils';
 
 const messagesList = new MessagesList();
 const SideInterface = new SideInterfaceWithAvatarAndMessages(
   avatar,
   search,
-  favorites,
   messagesList,
 );
 
@@ -44,6 +44,8 @@ const DialogInterface = new DialogInterfaceWithSendFormEndTopInterface(
 export const chat = new Chat({
   sideInterface: SideInterface,
   dialogInterface: DialogInterface,
+  chatAvatarForm,
+  chatInfo,
   authApi,
   router,
   validation: new Validation(errors, '#message'),
@@ -51,7 +53,8 @@ export const chat = new Chat({
   checkInputsOnFocusAndBlur,
   form: '#message',
   path,
-  checkOnSubmit,
+  sendMessageOnSubmit,
   userInfo,
   chatApi,
+  userApi,
 });

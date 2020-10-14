@@ -1,5 +1,5 @@
 export const messageTemplate = `<div class="message">
-              <div id="{{id}}" class="message__wrapper">
+              <div data-chat-id="{{id}}" class="message__wrapper">
                 <div class="message__user-avatar">
                   <img
                     class="message__user-image"

@@ -12,6 +12,9 @@ import {
   Search,
   TopInterface,
   UserInfo,
+  ChatAvatarForm,
+  ChatUsersForm,
+  ChatInfo,
 } from '../modules/views';
 
 import {
@@ -26,6 +29,8 @@ import {
   path,
   regData,
   userInfoData,
+  chatInfoFormData,
+  chatUsersFormData,
 } from '../modules/constants';
 
 import { Validation } from '../modules/models';
@@ -35,6 +40,8 @@ import { checkInputsOnFocusAndBlur, getDataOnSubmit } from '../modules/utils';
 import { authApi, chatApi, userApi } from './api';
 
 import { router } from './init-router';
+
+import { chat } from './controllers';
 
 export const reg = new FormReg(regData, {
   validation: new Validation(errors, '#reg'),
@@ -114,6 +121,31 @@ export const chatForm = new ChatForm(chatFormData, {
   error: '#chat-form-error',
   getDataOnSubmit,
 });
+
+export const chatAvatarForm = new ChatAvatarForm(chatInfoFormData, {
+  validation: new Validation(errors, '#myChatAvatarForm'),
+  errors,
+  checkInputsOnFocusAndBlur,
+  form: '#myChatAvatarForm',
+  chatApi,
+  router,
+  path,
+  getDataOnSubmit,
+});
+
+export const chatUsersForm = new ChatUsersForm(chatUsersFormData, {
+  validation: new Validation(errors, 'myChatUsersForm'),
+  errors,
+  checkInputsOnFocusAndBlur,
+  form: '#myChatUsersForm',
+  chatApi,
+  userApi,
+  router,
+  path,
+  getDataOnSubmit,
+});
+
+export const chatInfo = new ChatInfo({ chatApi, authApi, router, path });
 
 export const notFoundPage = new NotFoundPage(notFoundPageData, {
   router,

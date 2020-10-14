@@ -16,3 +16,5 @@ export { path } from './path';
 export { passData } from './pass-data';
 export { avaFormData } from './ava-form-data';
 export { chatFormData } from './chat-form-data';
+export { chatInfoFormData } from './chat-info-form-data';
+export { chatUsersFormData } from './chat-users-form-data';

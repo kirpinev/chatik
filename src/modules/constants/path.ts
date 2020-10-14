@@ -8,4 +8,7 @@ export const path = {
   pass: '/pass',
   ava: '/ava',
   newChat: '/new-chat',
+  chatAvatar: '/chat-avatar',
+  chatUsers: '/chat-users',
+  chatInfo: '/chat-info',
 };
