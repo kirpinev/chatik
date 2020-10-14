@@ -80,22 +80,9 @@ export class ChatInfo extends Block {
 
           const badgeActionButton = userBadge.querySelector('button');
 
-          if (JSON.parse(userInfo.response).id === user.id) {
-            badgeActionButton.innerHTML = '';
+          badgeActionButton.innerHTML = '';
 
-            badgeActionButton.insertAdjacentHTML(
-              'beforeend',
-              '<span>you</span>',
-            );
-
-            badgeActionButton.setAttribute('disabled', 'true');
-
-            badgeActionButton.style.cursor = 'default';
-          } else {
-            badgeActionButton.innerHTML = '';
-
-            badgeActionButton.insertAdjacentHTML('beforeend', deleteMark);
-          }
+          badgeActionButton.insertAdjacentHTML('beforeend', deleteMark);
 
           container.appendChild(userBadge);
         });

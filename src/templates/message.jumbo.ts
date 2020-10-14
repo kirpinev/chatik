@@ -7,10 +7,8 @@ export const messageTemplate = `<div class="message">
                     alt="{{title}}"
                   />
                 </div>
-
                 <div class="message__text-wrapper">
                   <p class="message__user-name">{{title}}</p>
                 </div>
-
               </div>
             </div>`;

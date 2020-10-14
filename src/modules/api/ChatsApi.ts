@@ -32,4 +32,8 @@ export class ChatsApi implements ChatsApiInterface {
   updateChatAvatar(body: FormData): Promise<PromiseInterface> {
     return this.api.put('/chats/avatar', body, 'multipart/form-data');
   }
+
+  getNewMessages(body: string): Promise<PromiseInterface> {
+    return this.api.get(`/chats/new/${body}`);
+  }
 }

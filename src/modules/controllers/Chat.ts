@@ -303,11 +303,11 @@ export class Chat implements ChatInterface {
 
         const data = JSON.parse(res.response);
 
-        for (const chat1 of data) {
-          const message = chat1.avatar
-            ? new Message(chat1)
+        for (const chat of data) {
+          const message = chat.avatar
+            ? new Message(chat)
             : new Message({
-              ...chat1,
+              ...chat,
               avatar:
                 'https://dmitrovipoteka.ru/wp-content/uploads/2016/09/default-user-img.jpg',
             });
