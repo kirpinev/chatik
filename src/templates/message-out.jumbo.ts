@@ -10,6 +10,7 @@ export const messageOutTemplate = `<div data-user-id="{{user_id}}" class="messag
               <div
                 class="messages-container__wrapper messages-container__wrapper_out"
               >
+              <p class="messages-container__login">{{login}}</p>
                 <p class="messages-container__text">{{content}}</p>
                 <p class="messages-container__time">{{time}}</p>
               </div>

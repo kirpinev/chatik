@@ -239,11 +239,15 @@ export class Chat implements ChatInterface {
 
       const userDataInfo = await this.props.userApi.getUserById(userId);
 
-      const userAvatar = JSON.parse(userDataInfo.response).avatar;
+      const { avatar: userAvatar, login: userLogin } = JSON.parse(
+        userDataInfo.response,
+      );
 
       messagesList[i].avatar = this.setAvatar(userAvatar);
 
       messagesList[i].time = this.getMessagesTime(messagesList[i].time);
+
+      messagesList[i].login = userLogin;
     }
 
     this.fillChatWithMessages(messagesList, container, userIdFromServer);
