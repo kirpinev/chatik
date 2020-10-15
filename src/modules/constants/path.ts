@@ -11,4 +11,5 @@ export const path = {
   chatAvatar: '/chat-avatar',
   chatUsers: '/chat-users',
   chatInfo: '/chat-info',
+  userInfoFromChat: '/user-info-from-chat',
 };

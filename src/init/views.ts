@@ -15,6 +15,7 @@ import {
   ChatAvatarForm,
   ChatUsersForm,
   ChatInfo,
+  UserInfoFromChat,
 } from '../modules/views';
 
 import {
@@ -142,6 +143,8 @@ export const chatUsersForm = new ChatUsersForm(chatUsersFormData, {
   path,
   getDataOnSubmit,
 });
+
+export const userInfoFromChat = new UserInfoFromChat({ router, path });
 
 export const chatInfo = new ChatInfo({ chatApi, authApi, router, path });
 

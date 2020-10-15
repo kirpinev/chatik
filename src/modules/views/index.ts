@@ -20,3 +20,4 @@ export { ChatAvatarForm } from './ChatAvatarForm';
 export { ChatUsersForm } from './ChatUsersForm';
 export { ChatUserBadge } from './ChatUserBadge';
 export { ChatInfo } from './ChatInfo';
+export { UserInfoFromChat } from './UserInfoFromChat';

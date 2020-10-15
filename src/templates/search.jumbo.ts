@@ -22,7 +22,7 @@ export const searchTemplate = `<section class="search">
                 stroke-linejoin="round"
               />
             </svg>
-            <input class="search__input" type="text" placeholder="Поиск" />
+            <input class="search__input" type="text" placeholder="Поиск чатов" />
             <button type="button" class="search__delete">
               <svg
                 width="24"

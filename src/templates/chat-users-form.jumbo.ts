@@ -2,6 +2,7 @@ export const chatUsersForm = `<form class="form form_chat-users" name="chat-user
    <fieldset class="form__fieldset" name="fieldset">
       <legend class="form__legend">Добавить пользователей</legend>
       <div class="form__container">
+         <label for="chat-users" class="form__label">Логин пользователя</label>
          <input id="chat-users" type="text" name="chatUsers" class="input form__input form__input_auth" placeholder="Введите логин пользователя" accept="image/*" required>
          <p class="error error_type_chat-users" id="chatUsers"></p>
       </div>

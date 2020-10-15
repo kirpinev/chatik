@@ -3,10 +3,12 @@ export const pass = `
    <fieldset class="form__fieldset" name="fieldset">
     <legend class="form__legend">Смена пароля</legend>
     <div class="form__container">
+        <label for="old-password" class="form__label">Старый пароль</label>
         <input type="password" name="oldPassword" class="input form__input form__input_pass" id="old-password" placeholder="{{oldPassword}}" pattern="{{passPattern}}" required>
         <p class="error error_type_password" id="oldPassword"></p>
     </div>
     <div class="form__container">
+        <label for="new-password" class="form__label">Новый пароль</label>
         <input type="password" name="newPassword" class="input form__input form__input_pass" id="new-password" placeholder="{{newPassword}}" pattern="{{passPattern}}" required>
         <p class="error error_type_password" id="newPassword"></p>
     </div>

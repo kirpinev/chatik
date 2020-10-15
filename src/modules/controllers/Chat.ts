@@ -38,6 +38,34 @@ export class Chat implements ChatInterface {
     this.openChatInfo();
 
     this.openChatDialog();
+
+    this.getUserInfoInChatDialog();
+
+    this.searchOwnChats();
+  }
+
+  getUserInfoInChatDialog() {
+    const chatContainer = document.querySelector('.messages-container');
+
+    chatContainer.addEventListener('click', async event => {
+      const target = event.target as HTMLElement;
+
+      if (target.classList.contains('messages-container__image')) {
+        const userId = target.parentElement.parentElement.dataset.userId;
+
+        const res = await this.props.userApi.getUserById(userId);
+
+        const userData = JSON.parse(res.response);
+
+        userData.avatar = this.setAvatar(userData.avatar);
+
+        this.props.router.go(this.props.path.userInfoFromChat);
+
+        this.props.userInfoFromChat.setProps(userData);
+
+        this.props.userInfoFromChat.setListeners();
+      }
+    });
   }
 
   openChatInfo(): void {
@@ -180,8 +208,6 @@ export class Chat implements ChatInterface {
     });
 
     this.socket.addEventListener('message', event => {
-      console.log(event.data);
-
       this.fillMessages(event.data);
     });
 
@@ -253,6 +279,8 @@ export class Chat implements ChatInterface {
     messages.forEach(message => {
       const userId = message.user_id || message.userId;
 
+      message.user_id = userId;
+
       const res =
         userId !== +userIdFromServer
           ? new MessageIn(message)
@@ -322,6 +350,30 @@ export class Chat implements ChatInterface {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  searchOwnChats() {
+    const searchInput = document.querySelector('.search__input') as HTMLElement;
+
+    searchInput.addEventListener('input', event => {
+      const input = event.target as HTMLInputElement;
+
+      const messages = document.querySelectorAll(
+        '.messages-list__wrapper section',
+      ) as NodeListOf<HTMLElement>;
+
+      Array.from(messages).forEach(message => {
+        const text = message.querySelector(
+          '.message__text-wrapper',
+        ) as HTMLElement;
+
+        if (text.innerText.includes(input.value)) {
+          message.style.display = 'block';
+        } else {
+          message.style.display = 'none';
+        }
+      });
+    });
   }
 
   clearMessagesList(): void {

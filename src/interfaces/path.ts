@@ -11,4 +11,5 @@ export interface PathInterface {
   chatAvatar: string;
   chatUsers: string;
   chatInfo: string;
+  userInfoFromChat: string;
 }

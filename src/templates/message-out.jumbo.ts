@@ -1,4 +1,4 @@
-export const messageOutTemplate = `<div class="messages-container__group messages-container__group_out">
+export const messageOutTemplate = `<div data-user-id="{{user_id}}" class="messages-container__group messages-container__group_out">
               <div class="messages-container__avatar">
                 <img
                   class="messages-container__image"

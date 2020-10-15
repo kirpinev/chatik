@@ -14,6 +14,7 @@ import {
   userInfo,
   chatAvatarForm,
   chatInfo,
+  userInfoFromChat,
 } from './views';
 
 import { authApi, chatApi, userApi } from './api';
@@ -48,6 +49,7 @@ export const chat = new Chat({
   sideInterface: SideInterface,
   dialogInterface: DialogInterface,
   chatAvatarForm,
+  userInfoFromChat,
   chatInfo,
   authApi,
   router,

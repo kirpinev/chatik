@@ -11,6 +11,7 @@ import {
   chatAvatarForm,
   chatUsersForm,
   chatInfo,
+  userInfoFromChat,
 } from './views';
 
 import { chat } from './controllers';
@@ -27,6 +28,7 @@ router
   .use('/new-chat', chatForm)
   .use('/chat-avatar', chatAvatarForm)
   .use('/chat-users', chatUsersForm)
-  .use('/chat-info', chatInfo);
+  .use('/chat-info', chatInfo)
+  .use('/user-info-from-chat', userInfoFromChat);
 
 export { router };

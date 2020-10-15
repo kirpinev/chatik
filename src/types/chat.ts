@@ -9,13 +9,19 @@ import { ErrorsInterface, PathInterface } from '../interfaces';
 
 import { AuthApi, ChatsApi, UsersApi } from '../modules/api';
 
-import { UserInfo, ChatAvatarForm, ChatInfo } from '../modules/views';
+import {
+  UserInfo,
+  ChatAvatarForm,
+  ChatInfo,
+  UserInfoFromChat,
+} from '../modules/views';
 
 export type ChatPropTypes = {
   sideInterface: SideInterfaceWithAvatarAndMessages;
   dialogInterface: DialogInterfaceWithSendFormEndTopInterface;
   chatAvatarForm: ChatAvatarForm;
   chatInfo: ChatInfo;
+  userInfoFromChat: UserInfoFromChat;
   checkInputsOnFocusAndBlur: (validation: Validation, form: string) => void;
   sendMessageOnSubmit: (
     validation: Validation,
