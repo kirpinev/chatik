@@ -5,7 +5,6 @@ export const messageInTemplate = `<div data-user-id="{{user_id}}" class="message
                   src="{{avatar}}"
                   alt="Игорь"
                 />
-                <div class="messages-container__status"></div>
               </div>
               <div
                 class="messages-container__wrapper messages-container__wrapper_in"

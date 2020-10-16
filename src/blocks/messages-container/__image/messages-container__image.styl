@@ -1,4 +1,5 @@
 .messages-container__image
+  box-sizing border-box
   object-fit cover
   object-position center
 
@@ -6,5 +7,11 @@
   height 32px
 
   border-radius 99px
+  border 2px solid transparent
 
   cursor pointer
+
+  transition all 0.2s linear
+
+  &:hover
+    border 2px solid #76a9ff

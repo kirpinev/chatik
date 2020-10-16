@@ -35,7 +35,7 @@ export class Chat implements ChatInterface {
 
     this.openUserInfo();
 
-    this.openChatInfo();
+    this.toggleChatInfo();
 
     this.openChatDialog();
 
@@ -68,7 +68,7 @@ export class Chat implements ChatInterface {
     });
   }
 
-  openChatInfo(): void {
+  toggleChatInfo(): void {
     if (!this.chat) {
       return;
     }
@@ -76,16 +76,37 @@ export class Chat implements ChatInterface {
     this.chat.addEventListener('click', event => {
       const target = event.target as HTMLElement;
 
-      if (target.getAttribute('id') === 'chat-avatar-button') {
-        this.props.chatAvatarForm.setInfo();
+      const settings = this.chat.querySelector(
+        '#list-navigation-chat',
+      ) as HTMLElement;
 
-        this.props.router.go(this.props.path.chatAvatar);
-      } else if (target.getAttribute('id') === 'chat-add-users-button') {
-        this.props.router.go(this.props.path.chatUsers);
-      } else if (target.getAttribute('id') === 'chat-about-button') {
-        this.props.chatInfo.setInfo();
+      switch (target.getAttribute('id')) {
+        case 'chat-top-interface-settings':
+          settings.style.display = 'flex';
 
-        this.props.router.go(this.props.path.chatInfo);
+          break;
+
+        case 'chat-avatar-button':
+          this.props.chatAvatarForm.setInfo();
+
+          this.props.router.go(this.props.path.chatAvatar);
+
+          break;
+
+        case 'chat-add-users-button':
+          this.props.router.go(this.props.path.chatUsers);
+
+          break;
+
+        case 'chat-about-button':
+          this.props.chatInfo.setInfo();
+
+          this.props.router.go(this.props.path.chatInfo);
+
+          break;
+
+        default:
+          settings.style.display = 'none';
       }
     });
   }
@@ -97,6 +118,10 @@ export class Chat implements ChatInterface {
 
     this.chat.addEventListener('click', event => {
       const target = event.target as HTMLElement;
+
+      const settings = this.chat.querySelector(
+        '#list-navigation-avatar',
+      ) as HTMLElement;
 
       switch (target.getAttribute('id')) {
         case 'user-top-menu__info':
@@ -120,7 +145,13 @@ export class Chat implements ChatInterface {
 
           break;
 
+        case 'user-top-menu__settings':
+          settings.style.display = 'flex';
+
+          break;
+
         default:
+          settings.style.display = 'none';
       }
     });
   }
