@@ -11,10 +11,6 @@
 - Docker
 - Mocha/Chai
 
-# Heroku
-
-https://chattik.herokuapp.com/
-
 # Какие есть страницы
 
 - Регистрация ("/reg")
